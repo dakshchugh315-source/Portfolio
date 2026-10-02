@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daksh Chugh — AI/ML Developer</title>
+  <meta name="description" content="Daksh Chugh — AI/ML developer. SIH rank #52, IIT Delhi hackathon Top 10, IIT Delhi certified in AI/ML and UI/UX. Building a CRM at Elegant Technologies." />
+  <meta property="og:title" content="Daksh Chugh — AI/ML Developer" />
+  <meta property="og:description" content="Projects, experience and achievements of Daksh Chugh." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div class="progress" id="progress"></div>
+  <div class="cursor-glow" id="glow"></div>
+  <div class="loader" id="loader"><span>DC</span><small class="mono" id="loader-pct">booting…</small></div>
+
+  <header class="nav">
+    <a href="#home" class="logo">DC<span>.</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#achievements">Wins</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <button class="term-btn mono" id="term-open" title="Open terminal (press ~)">&gt;_</button>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero" data-shape="sphere">
+      <a href="#experience" class="now-badge"><i></i><span id="now-text"></span></a>
+      <p class="eyebrow mono">Hello, I'm</p>
+      <h1 id="hero-name"></h1>
+      <h2 class="typer"><span id="typer" class="grad"></span><span class="caret">|</span></h2>
+      <p id="hero-tagline" class="lead"></p>
+      <div id="highlights" class="highlights"></div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn primary magnetic">View my work</a>
+        <a id="hero-github" class="btn ghost magnetic" target="_blank" rel="noopener">GitHub ↗</a>
+        <a id="hero-linkedin" class="btn ghost magnetic" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <p class="hint mono">psst — press <kbd>~</kbd> for the terminal</p>
+      <div class="scroll-hint mono">scroll<span></span></div>
+    </section>
+
+    <section id="about" class="section" data-shape="dc">
+      <h3 class="section-title"><span class="mono">01.</span> <span class="scramble">About me</span></h3>
+      <div class="split">
+        <div id="about-text" class="glass about-text reveal"></div>
+        <div class="stage"></div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section" data-shape="rank">
+      <h3 class="section-title"><span class="mono">02.</span> <span class="scramble">Wins &amp; Certifications</span></h3>
+      <div class="split">
+        <div>
+          <div id="stats" class="stats"></div>
+          <div id="achievement-list" class="achievement-list"></div>
+        </div>
+        <div class="stage"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" data-shape="galaxy">
+      <h3 class="section-title"><span class="mono">03.</span> <span class="scramble">Projects</span></h3>
+      <div id="filters" class="filters reveal"></div>
+      <p class="swipe-hint mono">swipe →</p>
+      <div id="project-grid" class="project-grid"></div>
+      <div id="swipe-dots" class="swipe-dots"></div>
+    </section>
+
+    <section id="experience" class="section" data-shape="helix">
+      <h3 class="section-title"><span class="mono">04.</span> <span class="scramble">Experience</span></h3>
+      <div class="split">
+        <div id="timeline" class="timeline"></div>
+        <div class="stage"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" data-shape="knot">
+      <h3 class="section-title"><span class="mono">05.</span> <span class="scramble">Skills</span></h3>
+      <div class="split reverse">
+        <div class="stage"></div>
+        <div id="skill-groups" class="skill-groups"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact" data-shape="talk">
+      <div class="contact-inner">
+        <h3 class="section-title center"><span class="mono">06.</span> <span class="scramble">Let's build something</span></h3>
+        <p class="lead center reveal">Open to internships, freelance work, collaborations and hackathon teams. My inbox is always open.</p>
+        <div id="contact-links" class="contact-links reveal"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mono">Designed &amp; built by Daksh Chugh · <span id="year"></span> · <button class="link-btn" id="term-open-2">open terminal</button></footer>
+
+  <!-- Mobile: app-style bottom tab bar -->
+  <nav class="tabbar" aria-label="Sections">
+    <a href="#home"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+    <a href="#achievements"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></svg>Wins</a>
+    <a href="#projects"><svg viewBox="0 0 24 24"><path d="M3 7h18v13H3zM8 7V4h8v3"/></svg>Projects</a>
+    <a href="#experience"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h7M12 12h7M5 17h7"/></svg>Journey</a>
+    <a href="#contact"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Talk</a>
+  </nav>
+
+  <!-- Terminal easter egg -->
+  <div class="term-wrap" id="term" aria-hidden="true">
+    <div class="term glass">
+      <div class="term-bar"><i></i><i></i><i></i><span class="mono">daksh@portfolio: ~</span><button id="term-close" aria-label="Close">✕</button></div>
+      <div class="term-body mono" id="term-body"></div>
+      <form class="term-input mono" id="term-form"><span>daksh@portfolio:~$</span><input id="term-in" autocomplete="off" spellcheck="false" /></form>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
